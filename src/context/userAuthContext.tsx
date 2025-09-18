@@ -10,7 +10,7 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import { createContext } from 'node:vm';
+import { createContext } from 'react';
 import { auth } from '../firebaseConfig';
 import type { LogOut } from 'lucide-react';
 import { useContext, useEffect } from 'react';
