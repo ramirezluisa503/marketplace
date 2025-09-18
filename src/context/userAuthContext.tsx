@@ -1,4 +1,5 @@
 /*Aqui vamos a crear el contexto para la pagina del login  */
+/*Este código crea un sistema de autenticación para una aplicación web usando React y Firebase. Centraliza la lógica de inicio y cierre de sesión para que la información del usuario esté disponible en toda la aplicación de manera sencilla. */
 
 import type Signup from '@/pages/singup/singup';
 /*Importamos funciones claves e Firebase para la autenticación*/
