@@ -1,34 +1,30 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Login from "./pages/login/login";
-import Signup from "./pages/singup/singup";
+import Signup from "./pages/singup/singup"; // Corrected the import name
 import Home from "./pages/home/home";
-import ProtecctedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
+import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
 
 export const router = createBrowserRouter([
     {
-        element:<ProtecctedRoutes />,
-        children=[
+        element: <ProtectedRoutes />,
+        children: [
             {
+                // The root path '/' is for the protected home page.
                 path: "/",
-                element:<Home />
-            }
-            /*Aqui adentro pongo todas las rutas que quiero proteger
-            si la pagina esta dentro de estas rutas inmediatamente me devuelve a la pagina de login
-             */
-        ]
-
+                element: <Home />,
+            },
+            // Add more protected routes here.
+        ],
     },
     {
-        path:"/home",
-        element:<Home />
+        // The login route does not need protection.
+        path: "/login",
+        element: <Login />
     },
     {
-        path:"/login",
-        element:<Login />
-    },
-    {
-        path:"/signup",
-        element:<Signup />
+        // Add the signup route, which also doesn't need protection.
+        path: "/signup", 
+        element: <Signup /> // Corrected the component name
     },
 ]);
 

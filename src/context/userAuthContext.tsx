@@ -5,7 +5,6 @@ import type Signup from '@/pages/singup/singup';
 /*Importamos funciones claves e Firebase para la autenticación*/
 import {
   GoogleAuthProvider, /*Permite autenticar a los usuarios con google */
-  User, /*El tipo de dato que Firebase usa para representar un usuario autenticado*/
   createUserWithEmailAndPassword, /*Crea un nuevo usuario con email y contraseña*/
   onAuthStateChanged, /*Una función que escucha y detecta el estado de autenticacion del usuario (inisia sesion. cierra sesion) */
   signInWithEmailAndPassword, /*Inicia sesion con email y contraseña */
@@ -15,6 +14,7 @@ import {
 import { auth } from '../firebaseConfig';
 import type { LogOut } from 'lucide-react';
 import { useContext, useEffect,createContext } from 'react'; /*Hooks de react */
+import type { User } from 'firebase/auth';
 
 
 /*Define las propiedades que el componente UserAuthProvider recibira */
