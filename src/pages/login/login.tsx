@@ -1,20 +1,18 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { useUserAuth } from '@/context/userAuthContext';
-import type { UserLogIn } from '@/types/types';
-import { LogIn } from 'lucide-react';
-import * as React from 'react';
-import { useNavigate, Link} from 'react-router-dom';
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useUserAuth } from "@/context/userAuthContext";
+import type { UserLogIn } from "@/types/types";
+import { Label } from "@radix-ui/react-label";
+import * as React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const initialValue: UserLogIn = {
   email: '',
@@ -56,68 +54,76 @@ const Login: React.FunctionComponent<ILoginProps> = (props) =>{
       }
     };
     
-  
-  
-  
     return (
-      <div className="bg-slate-800 w-screen h-screen ">
-        <div className="container p-6 flex h-full justify-center">
-          <Card className="w-full max-w-sm ">
-            <CardHeader>
-              <CardTitle>Regístrese para obtener una cuenta</CardTitle>
-              <CardDescription>
-                Ingrese su correo electrónico y contraseña a continuación para crear una cuenta
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+      <div className="bg-slate-800 w-screen h-screen">
+      <div className="container p-6 flex h-full justify-center">
+        <div className="flex justify-center items-center w-full">
+          <div className="max-w-sm rounded-xl border bg-card text-card-foreground shadow-sm">
+            <Card>
               <form onSubmit={handleSubmit}>
-                <div className="flex flex-col gap-6">
+                <CardHeader className="space-y-1">
+                  <CardTitle className="text-2xl text-center mb-4">
+                    Market Place
+                  </CardTitle>
+                  <CardDescription>
+                    Ingresa tu correo electrónico a continuación para crear tu cuenta
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  <div className="grid">
+                    <Button variant="outline" onClick={handleGoogleSignIn}>
+                      Iniciar con Google
+                    </Button>
+                  </div>
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <span className="w-full border-t" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-background px-2 text-muted-foreground">
+                        o
+                      </span>
+                    </div>
+                  </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Correo</Label>
+                    <Label htmlFor="email">Dirección de correo electrónico</Label>
                     <Input
                       id="email"
                       type="email"
+                      placeholder="dipesh@example.com"
                       value={userLoginInfo.email}
-                      placeholder="m@example.com"
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setUserLoginInfo({ ...userLoginInfo, email: e.target.value })
                       }
-                      required
                     />
                   </div>
                   <div className="grid gap-2">
-                    <div className="flex items-center">
-                      <Label htmlFor="password">Contraseña</Label>
-                    </div>
+                    <Label htmlFor="password">Contraseña</Label>
                     <Input
                       id="password"
                       type="password"
-                      placeholder="Password"
+                      placeholder="Contraseña"
                       value={userLoginInfo.password}
                       onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setUserLoginInfo({ ...userLoginInfo, password: e.target.value })
                       }
-                      required
                     />
                   </div>
-                </div>
-                <CardFooter className="flex-col gap-2 p-0 pt-6">
-                  <Button 
-                  type="submit" 
-                  className="w-full text-black">
+                </CardContent>
+                <CardFooter className="flex flex-col">
+                  <Button className="w-full text-black" type="submit">
                     Inscribirse
                   </Button>
-                  <p className='mt-3 text-sm text-center'>
-                    No tienes una cuenta ? <Link to="/signup">Inscribirse</Link>
-
+                  <p className="mt-3 text-sm text-center">
+                    ¿Ya tienes una cuenta? <Link to="/signup">Registrarse</Link>
                   </p>
                 </CardFooter>
               </form>
-            </CardContent>
-          </Card>       
+            </Card>
+          </div>
         </div>
-          
       </div>
+    </div>
     );
 }
 
