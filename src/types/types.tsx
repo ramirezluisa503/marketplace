@@ -3,7 +3,7 @@ export interface UserLogIn{
     password:string,
 }
 
-export interface UserSingIn{
+export interface UserSignIn{
     email:string,
     password:string,
     confirmPassword: string,

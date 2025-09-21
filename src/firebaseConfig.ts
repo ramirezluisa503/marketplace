@@ -7,12 +7,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APIKEY,
-  authDomain: import.meta.env.VITE_AUTHDOMAIN,
-  projectId: import.meta.env.VITE_PROJECTID,
-  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGINSENDERID,
-  appId: import.meta.env.VITE_APPID
+  apiKey:"AIzaSyBMDi8173fx1dFUThiSh7ijs52KEEw0nI4",
+  authDomain: "marketplace-4072a.firebaseapp.com",
+  projectId: "marketplace-4072a",
+  storageBucket: "marketplace-4072a.firebasestorage.app",
+  messagingSenderId: "645440227057",
+  appId: "1:645440227057:web:9fb526222b41294ae20b50"
 };
 
 // Initialize Firebase
