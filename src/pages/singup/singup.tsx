@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -6,19 +6,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { useUserAuth } from "@/context/userAuthContext";
-import type { UserSignIn } from "@/types/types";
-import { Label } from "@radix-ui/react-label";
-import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
-
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { useUserAuth } from '@/context/userAuthContext';
+import type { UserSignIn } from '@/types/types';
+import { Label } from '@radix-ui/react-label';
+import * as React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const initialValue: UserSignIn = {
-  email: "",
-  password: "",
-  confirmPassword: "",
+  email: '',
+  password: '',
+  confirmPassword: '',
 };
 
 interface ISignupProps {}
@@ -31,25 +30,26 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/");
+      navigate('/');
     } catch (error) {
-      console.log("Error : ", error);
+      console.log('Error : ', error);
     }
   };
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log("The user info is : ", userInfo);
+      console.log('The user info is : ', userInfo);
       await signUp(userInfo.email, userInfo.password);
-      navigate("/");
+      navigate('/');
     } catch (error) {
-      console.log("Error : ", error);
+      console.log('Error : ', error);
     }
   };
   return (
-    <div className="bg-slate-800 w-screen h-screen">
-      <div className="container p-6 flex h-full justify-center">
+    <div className="bg-slate-800 w-screen h-screen pt-20">
+      <div className="container mx-auto p-6 h-full">
         <div className="flex justify-center items-center w-full">
+          <div className="grid grid-cols-2 gap-2">IMAGENES</div>
           <div className="max-w-sm rounded-xl border bg-card text-card-foreground shadow-sm">
             <Card>
               <form onSubmit={handleSubmit}>
@@ -58,12 +58,16 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
                     Market Place
                   </CardTitle>
                   <CardDescription>
-                    Ingresa tu correo electrónico a continuación para crear tu cuenta
+                    Ingresa tu correo electrónico a continuación para crear tu
+                    cuenta
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-4">
                   <div className="grid">
-                    <Button variant="outline" onClick={handleGoogleSignIn}>
+                    <Button
+                      variant="outline"
+                      onClick={handleGoogleSignIn}
+                    >
                       Iniciar con Google
                     </Button>
                   </div>
@@ -78,7 +82,9 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
                     </div>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Dirección de correo electrónico</Label>
+                    <Label htmlFor="email">
+                      Dirección de correo electrónico
+                    </Label>
                     <Input
                       id="email"
                       type="email"
@@ -102,7 +108,9 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="confirmpassword">Confirmar contraseña</Label>
+                    <Label htmlFor="confirmpassword">
+                      Confirmar contraseña
+                    </Label>
                     <Input
                       id="confirmpassword"
                       type="password"
@@ -118,11 +126,15 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col">
-                  <Button className="w-full text-black" type="submit">
+                  <Button
+                    className="w-full text-black"
+                    type="submit"
+                  >
                     Inscribirse
                   </Button>
                   <p className="mt-3 text-sm text-center">
-                    ¿Ya tienes una cuenta? <Link to="/login">Iniciar Sesión</Link>
+                    ¿Ya tienes una cuenta?{' '}
+                    <Link to="/login">Iniciar Sesión</Link>
                   </p>
                 </CardFooter>
               </form>
