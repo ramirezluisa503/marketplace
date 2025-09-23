@@ -34,15 +34,17 @@ const Login: React.FunctionComponent<ILoginProps> = (props) =>{
     const navigate = useNavigate();
  
     const [userLoginInfo, setUserLoginInfo] = React.useState<UserLogIn>(initialValue);
-  
+
+    const [error, setError] = React.useState<string | null>(null);
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
         console.log('La información del usuario es: ', userLoginInfo);
-        await LogIn(userLoginInfo.email, userLoginInfo.password);
+        await logIn(userLoginInfo.email, userLoginInfo.password);
         navigate("/");
       } catch (error) {
-        console.log('Error : ', error);
+        setError("Las credenciales ingresadas no son válidas.");
+        console.log("Error : ", error);
       }
     };
   
@@ -62,7 +64,7 @@ const Login: React.FunctionComponent<ILoginProps> = (props) =>{
       
       <div className="bg-gradient-to-b from-[#031d42] to-[#0954be] w-screen h-screen">
         <div className="container mx-auto p-6 flex h-full">
-          <div className="grid grid-cols-2 justify-center items-center  w-full">
+          <div className="sm:grid sm:grid-cols-2 flex justify-center items-center  w-full">
             <div className="p-6 w-4xl hidden lg:block">
               <div className="grid grid-cols-2 gap-2">
                 <img
@@ -136,7 +138,8 @@ const Login: React.FunctionComponent<ILoginProps> = (props) =>{
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-col">
-                    <Button className="w-full text-black" type="submit">
+                    {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+                    <Button className="w-full text-black " type="submit">
                       Iniciar sesión
                     </Button>
                     <p className="mt-3 text-sm text-center">

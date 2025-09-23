@@ -52,7 +52,7 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
   return (
     <div className="bg-gradient-to-b from-[#031d42] to-[#0954be] w-screen h-screen">
       <div className="container mx-auto p-6 flex h-full">
-        <div className="grid grid-cols-2 justify-center items-center  w-full">
+        <div className="sm:grid sm:grid-cols-2 flex justify-center items-center  w-full">
           <div className="p-6 w-4xl hidden lg:block">
             <div className="grid grid-cols-2 gap-2">
               <img
