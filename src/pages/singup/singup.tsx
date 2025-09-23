@@ -13,6 +13,10 @@ import type { UserSignIn } from '@/types/types';
 import { Label } from '@radix-ui/react-label';
 import * as React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import PortadaLoginSignup1 from '../../assets/images/PortadaLoginSignup1.webp'
+import PortadaLoginSignup2 from '../../assets/images/PortadaLoginSignup2.webp'
+import PortadaLoginSignup3 from '../../assets/images/PortadaLoginSignup3.webp'
+import PortadaLoginSignup4 from '../../assets/images/PortadaLoginSignup4.webp'
 
 const initialValue: UserSignIn = {
   email: '',
@@ -46,11 +50,32 @@ const Signup: React.FunctionComponent<ISignupProps> = () => {
     }
   };
   return (
-    <div className="bg-slate-800 w-screen h-screen pt-20">
-      <div className="container mx-auto p-6 h-full">
-        <div className="flex justify-center items-center w-full">
-          <div className="grid grid-cols-2 gap-2">IMAGENES</div>
-          <div className="max-w-sm rounded-xl border bg-card text-card-foreground shadow-sm">
+    <div className="bg-gradient-to-b from-[#031d42] to-[#0954be] w-screen h-screen">
+      <div className="container mx-auto p-6 flex h-full">
+        <div className="grid grid-cols-2 justify-center items-center  w-full">
+          <div className="p-6 w-4xl hidden lg:block">
+            <div className="grid grid-cols-2 gap-2">
+              <img
+                className=" w-2/3 h-auto aspect-video rounded-3xl place-self-end"
+                src={PortadaLoginSignup2}
+              />
+              <img
+                className=" w-2/4 h-auto aspect-auto rounded-3xl"
+                src={PortadaLoginSignup1}
+              />
+              <img
+                className=" w-2/4 h-auto aspect-auto rounded-3xl place-self-end"
+                src={PortadaLoginSignup3}
+              />
+              <img
+                className=" w-2/3 h-auto aspect-video rounded-3xl"
+                src={PortadaLoginSignup4}
+              />
+            </div>
+          </div>
+        
+        
+          <div className="w-96 rounded-xl border bg-card text-card-foreground shadow-sm justify-self-center">
             <Card>
               <form onSubmit={handleSubmit}>
                 <CardHeader className="space-y-1">
