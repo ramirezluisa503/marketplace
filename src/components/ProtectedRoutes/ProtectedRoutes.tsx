@@ -1,3 +1,6 @@
+/*Las ProtectedRoutes (rutas protegidas) en el desarrollo web se usan para restringir el acceso a ciertas partes de una aplicación a usuarios no autorizados o que no cumplen con ciertos requisitos, como no haber iniciado sesión. Son una forma de implementar el control de acceso y la seguridad en una aplicación web.  */
+
+
 import * as React from 'react';
 import { Navigate,Outlet, useLocation } from 'react-router-dom';
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -15,6 +18,7 @@ const ProtecctedRoutes: React.FunctionComponent<IProtecctedRoutesProps> = (props
     /*useLocation nos da la ruta que esta en el navegador  */
     const location = useLocation();
 
+    /*Cuando la pagina se demora un poco en cargar aparece la palabra ...Loading */
     if (loading) {
         return <div>...Loading</div>
     }

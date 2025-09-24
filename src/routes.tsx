@@ -5,7 +5,8 @@ import Home from "./pages/home/home";
 import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
 
 export const router = createBrowserRouter([
-    {
+    {   
+        /*Aqui usamos el componente de las rutas protegidas */
         element: <ProtectedRoutes />,
         children: [
             {
