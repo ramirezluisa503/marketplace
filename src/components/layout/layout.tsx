@@ -8,7 +8,7 @@ interface ILayoutProps{
 const Layout: React.FunctionComponent<ILayoutProps>=({children})=>{
     return (
         
-      <div>{children}</div>
+      <div >{children}</div>
         
     ) ;
 }
