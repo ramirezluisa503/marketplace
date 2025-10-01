@@ -33,8 +33,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                 {/* Título y Subtítulo */}
                 <div className="text-center mb-10 sm:mb-16">
                     {/* El texto debe ser oscuro para contrastar con el fondo claro de la página (que ya tienes en el degradado de Home.tsx) */}
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">{title}</h2>
-                    <p className="text-base text-gray-600 mt-2">{subtitle}</p>
+                    <h2 className="text-3xl sm:text-4xl text-black">{title}</h2>
+                    <p className="text-base text-black mt-2">{subtitle}</p>
                 </div>
 
                 {/* Contenedor de la Cuadrícula (Grid) */}

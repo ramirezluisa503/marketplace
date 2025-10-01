@@ -142,10 +142,10 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
         {/* ======================================================= */}
         <div className="p-10 md:p-20 w-full">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-800">
+            <h2 className="text-4xl text-black">
               Explorar por Categoría
             </h2>
-            <p className="mt-2 text-lg text-gray-600">
+            <p className="mt-2 text-lg text-black">
               Encuentra exactamente lo que buscas con nuestras categorías bien
               organizadas.
             </p>
@@ -155,7 +155,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
             {/* Ítems de Categoría (Mantenidos) */}
             <a
               href="#"
-              className="w-36 h-36 p-4 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out flex flex-col items-center justify-center bg-slate-300/60 backdrop-blur-sm text-gray-900"
+              className="w-36 h-36 p-4 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out flex flex-col items-center justify-center bg-[#313234] backdrop-blur-sm text-gray-900"
             >
               <img
                 src={IconoLaptop}

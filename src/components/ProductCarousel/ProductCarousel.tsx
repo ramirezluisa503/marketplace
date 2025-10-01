@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
-// Asegúrate de que esta ruta sea correcta para tu proyecto
 import CardEcommerce from '../CardEcommerce/CardEcommrce';
+import IconoFlechaDerecha from '../../assets/icons/IconoFlechaDerecha.svg';
+import IconoFlechaIzquierda from '../../assets/icons/IconoFlechaIzquierda.svg';
 
-// --- 1. Definiciones de Tipos ---
+
 
 interface Product {
   id: number;
@@ -19,7 +20,7 @@ interface ProductCarouselProps {
   onAddToCart: (productName: string) => void;
 }
 
-// --- 2. Subcomponente: Flecha de Navegación ---
+
 
 const ArrowIcon: React.FC<{
   direction: 'left' | 'right';
@@ -27,34 +28,25 @@ const ArrowIcon: React.FC<{
 }> = ({ direction, onClick }) => (
   <button
     onClick={onClick}
-    // Estilos para la flecha: fondo blanco, color oscuro, sombra, transición
-    className="absolute top-1/2 transform -translate-y-1/2 
-                   bg-white text-gray-800 p-3 rounded-full shadow-xl 
-                   hover:bg-blue-600 hover:text-white transition duration-200 
-                   hidden md:block z-10"
-    style={{ [direction === 'left' ? 'left' : 'right']: '-20px' }}
+    
+    className={`
+      absolute top-1/2 transform -translate-y-1/2 
+      bg-white text-gray-800 p-3 rounded-full shadow-xl 
+      hover:bg-blue-600 hover:text-white transition duration-200 
+      hidden md:block z-10
+      ${direction === 'left' ? 'left-0 ml-[-20px]' : 'right-0 mr-[-20px]'}
+    `}
+    
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      {direction === 'left' ? (
-        <polyline points="15 18 9 12 15 6"></polyline>
-      ) : (
-        <polyline points="9 18 15 12 9 6"></polyline>
-      )}
-    </svg>
+    {direction === 'right' ? (
+      <img src={IconoFlechaDerecha} alt="Flecha Derecha" className="w-5 h-5" />
+    ) : (
+      <img src={IconoFlechaIzquierda} alt="Flecha Izquierda" className="w-5 h-5" />
+    )}
   </button>
 );
 
-// --- 3. Componente Principal: ProductCarousel ---
+
 
 const ProductCarousel: React.FC<ProductCarouselProps> = ({
   title,
@@ -84,12 +76,11 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
   };
 
   return (
-    // Fondo transparente (bg-transparent) y texto blanco (text-white)
     <section className="bg-transparent py-16 sm:py-24 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título y Subtítulo */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold mb-3">{title}</h2>
+          <h2 className="text-4xl  mb-3">{title}</h2>
           <p className="text-gray-300 text-lg">{subtitle}</p>
         </div>
 
@@ -104,10 +95,9 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
           {/* Contenedor Deslizable */}
           <div
             ref={carouselRef}
-            // flex: alinea las tarjetas horizontalmente
             // overflow-x-scroll no-scrollbar: permite el scroll horizontal y oculta la barra
             // space-x-6: espacio entre las tarjetas
-            className="flex overflow-x-scroll no-scrollbar space-x-6 pb-4"
+            className="flex overflow-x-scroll no-scrollbar space-x-24 p-10"
             style={{ scrollSnapType: 'x mandatory' }}
           >
             {products.map((product) => (

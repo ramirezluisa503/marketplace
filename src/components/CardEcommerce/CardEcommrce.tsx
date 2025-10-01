@@ -18,13 +18,6 @@ const CardEcommerce: React.FC<CardEcommerceProps> = ({
 }) => {
   return (
     // Contenedor principal de la tarjeta con estilos de Tailwind CSS
-    // bg-white: fondo blanco
-    // rounded-xl: bordes redondeados grandes
-    // shadow-lg: sombra grande
-    // overflow-hidden: asegura que la imagen no se salga de los bordes redondeados
-    // border border-blue-100: borde azul claro para el efecto visual
-    // max-w-sm: ancho máximo para la tarjeta
-    // mx-auto: centra la tarjeta si está en un contenedor flex/grid
     <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100 max-w-sm mx-auto transition-transform duration-200 hover:scale-105">
       
       {/* Sección de la imagen del producto */}
@@ -32,7 +25,7 @@ const CardEcommerce: React.FC<CardEcommerceProps> = ({
         <img
           src={imageUrl}
           alt={productName}
-          className="w-full h-full object-cover" // object-cover para que la imagen cubra el espacio sin distorsionarse
+          className="w-full h-full object-contain" 
         />
       </div>
 
