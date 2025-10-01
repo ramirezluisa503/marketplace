@@ -53,6 +53,28 @@ const dummyCarouselProducts = [
     price: 149.5,
     sellerName: 'HealthTech Labs',
   },
+  {
+    id: 5,
+    imageUrl: celular,
+    productName: 'Smartphone IA-X Pro',
+    price: 999.99,
+    sellerName: 'TecnoGlobal S.A.',
+  },
+  {
+    id: 6,
+    imageUrl: auriculares,
+    productName: 'Auriculares Quantum Sound',
+    price: 199.99,
+    sellerName: 'AudioGenius Co.',
+  },
+  {
+    id: 7,
+    imageUrl: monitor,
+    productName: "Monitor UltraView 27''",
+    price: 459.99,
+    sellerName: 'VisualTech Corp.',
+  },
+  
 ];
 
 // Productos para el Grid (Todos los Productos)
